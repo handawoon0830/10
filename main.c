@@ -5,12 +5,9 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 void main(void) {
-	char src[] ="the worst things to eat before you sleep";
-	char dst[100];
-	
-	strcpy(dst, src); //복사하는 문자역 <> 없이 이렇게 쓰면 됨. 
-	
+	char str[30]="happy C programming";
+ 
 
-	printf("copied string : %s", dst);
+	printf("문자열\"%s\"의 길이: %i", str, strlen(str));
 	
 }
