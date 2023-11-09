@@ -6,18 +6,20 @@
 
 int main(void) {
 	FILE* fp; //파일 포인터와 함수 이름 
-	char str[100];
+	char c;
 	int i;
 	//1. file open
-	fp= fopen("sample.txt", "w");
-	
-	for ( i=0; i<3; i++)
+	fp= fopen("sample.txt", "r");
+		//2. write file
+	if (fp==NULL)
 	{
+		printf("failed to open\n");
+		return 0;
+	}
 	
-		printf("input a word:");
-		scanf("%s", str); // str 자체가 포인터라 &필요 없음 
-	//2. write file
-		fprintf(fp, "%s\n", str);
+	while ((c=fgetc(fp))!= EOF)
+	{
+		putchar(c);
 	}
 	//3. close file
 	fclose(fp);
